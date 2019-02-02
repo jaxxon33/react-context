@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <React.Fragment className="App">
+        <React.Fragment>
           <Navbar />
           <div className="container"></div>
           <Switch>
