@@ -18,7 +18,10 @@ export class Provider extends Component {
 			`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${process.env.REACT_APP_MM_KEY}`
 		)
 			.then(res => res.json())
-			.then(res => console.log(res))
+			.then(res => {
+				this.setState({ track_list: res.message.body.track_list })
+				// console.log(res.message.body.track_list)
+			})
 			.catch(err => console.log(err))
 	}
 
